@@ -1,3 +1,39 @@
+$light-bg: #fff;
+$dark-bg: #191919;
+
+:root {
+  --bg: #fff;
+  --primary-bg: #fff;
+  --primary-bg-hover: #efefef;
+  --box-shadow-btn: 0 0 10px rgba(213, 213, 213, 0.66);
+  --accent-color: #7e9fbc;
+  --text-color: #1f1f1f;
+}
+
+.theme-dark {
+  --bg: #191919;
+  --primary-bg: #2a2a2a;
+  --primary-bg-hover: #191919;
+  --box-shadow-btn: 0 0 10px rgba(16, 16, 16, 0.66);
+  --accent-color: #fff;
+  --text-color: #fff;
+}
+
 @import "scss/settings/breakpoints";
 @import "scss/settings/settings";
+@import "scss/components/header";
+@import "scss/components/footer";
+@import "scss/components/sidebar";
 
+.container {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}

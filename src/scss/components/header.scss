@@ -1,0 +1,135 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+
+  &__ui {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__ui-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-accent);
+    transition: 200ms ease-in-out;
+    box-shadow: var(--box-shadow-btn);
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 13px;
+    }
+
+    &:hover {
+      background-color: var(--primary-bg-hover);
+      transform: scale(1.1);
+      transition: all 200ms ease-in-out;
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.cart {
+  position: relative;
+
+  svg {
+    transition: all 200ms ease-in-out;
+    fill: var(--accent-color);
+  }
+}
+
+.quantity {
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  background-color: #7e9fbc;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.7rem;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorites {
+  position: relative;
+
+  &__logo {
+    width: 21px;
+    height: 21px;
+  }
+
+  &-active {
+    .favorites__logo {
+      fill: #ca3b3b;
+    }
+  }
+}
+
+.cart {
+  &__logo {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+.theme {
+
+  &__logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  &.theme-light {
+    .theme__logo-dark {
+      display: none;
+    }
+  }
+
+  &.theme-dark {
+    .theme__logo-light {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+
+  img {
+    width: 50px;
+    margin-right: 10px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    transition: 100ms ease-in-out;
+  }
+
+  &__subtitle {
+    color: #ccc;
+    font-size: 1.4rem;
+  }
+}
