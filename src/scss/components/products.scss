@@ -22,12 +22,29 @@
     &:first-child {
       margin-right: 13px;
     }
+
+    svg {
+      pointer-events: none;
+    }
   }
 
   &__list {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    transition: 200ms ease-in-out;
+  }
+
+  &__item {
+    transition: 200ms ease-in-out;
+  }
+
+  &__list.products__view-full {
+    flex-direction: column;
+
+    .products__item {
+      width: 100%;
+    }
   }
 }
 
