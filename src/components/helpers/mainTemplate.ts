@@ -1,3 +1,6 @@
+// @ts-ignore
+import arrow from '../../img/arrow.svg'
+
 export default function mainTemplate() {
     return `
      <div class="main__wrapper">
@@ -126,7 +129,7 @@ export default function mainTemplate() {
           <div class="products__inner">
             <div class="sort">
               <span class="sort__by">По рейтинг</span>
-              <img class="sort__arrow" src="img/arrow.svg" width="17" alt="arrow">
+              <img class="sort__arrow" src="${arrow}" width="17" alt="arrow">
 
               <ul class="sort__list">
                 <li class="sort__item">По имени</li>
@@ -161,12 +164,6 @@ export default function mainTemplate() {
 
         <div class="products__pagination pagination">
           <ul class="pagination__list">
-            <li class="btn btn-pagination pagination__item pagination__item-current">1</li>
-            <li class="btn btn-pagination pagination__item">2</li>
-            <li class="btn btn-pagination pagination__item">3</li>
-            <li class="btn btn-pagination pagination__item">4</li>
-            <li class="btn btn-pagination pagination__item">5</li>
-            <li class="btn btn-pagination pagination__item">6</li>
           </ul>
         </div>
       </section>

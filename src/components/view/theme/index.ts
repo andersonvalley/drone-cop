@@ -1,20 +1,17 @@
 class ToogleTheme {
     private body: HTMLElement
-    private el: HTMLElement | null
+    public el: HTMLElement | null
 
     constructor(selector: string) {
         this.el = document.querySelector(selector)
         this.body = document.body
         this.clickHandler = this.clickHandler.bind(this)
-        this.initial()
         this.changeTheme()
     }
 
     initial() {
         this.body.classList.add(this.getColorPreference() || '')
-        if (this.el) {
-            this.el.classList.add(this.getColorPreference() || '')
-        }
+        this.el?.classList.add(this.getColorPreference() || '')
     }
 
     setLocalStorage(item: string) {
@@ -32,23 +29,26 @@ class ToogleTheme {
     }
 
     clickHandler() {
-        if (this.el) {
-            if (this.el.className.includes('theme-light')) {
-                this.el.classList.remove('theme-light')
-                this.el.classList.add('theme-dark')
-                this.body.classList.add('theme-dark')
-                this.body.classList.remove('theme-light')
-                this.setLocalStorage('theme-dark')
-
-            } else {
-                this.el.classList.add('theme-light')
-                this.el.classList.remove('theme-dark')
-                this.body.classList.add('theme-light')
-                this.body.classList.remove('theme-dark')
-                this.setLocalStorage('theme-light')
-
-            }
+        if (this.el?.className.includes('theme-light')) {
+            this.changeClassThemeButton('theme-light', 'theme-dark')
+            this.changeClassBody('theme-light', 'theme-dark')
+            this.setLocalStorage('theme-dark')
+        } else {
+            this.changeClassThemeButton('theme-dark', 'theme-light')
+            this.changeClassBody('theme-dark', 'theme-light')
+            this.setLocalStorage('theme-light')
         }
+    }
+
+
+    changeClassBody(remove: string, add: string) {
+        this.body.classList.add(add)
+        this.body.classList.remove(remove)
+    }
+
+    changeClassThemeButton(remove: string, add: string) {
+        this.el?.classList.remove(remove)
+        this.el?.classList.add(add)
     }
 
     changeTheme() {

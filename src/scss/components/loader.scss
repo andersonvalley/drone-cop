@@ -1,4 +1,4 @@
-.loader {
+.theme-dark .loader {
   width: 8px;
   height: 8px;
   position: relative;
@@ -6,6 +6,39 @@
   background: #fff;
   animation: wave 1s ease-in infinite;
   display: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.theme-light .loader {
+  width: 8px;
+  height: 8px;
+  position: relative;
+  border-radius: 50%;
+  background: #255472;
+  animation: waveLight 1s ease-in infinite;
+  display: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes waveLight {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0),
+    0 0 0 20px rgba(44, 77, 98, 0.8),
+    0 0 0 40px rgba(80, 143, 169, 0.6),
+    0 0 0 60px #8bafd0,
+    0 0 0 80px #7e9fbc
+  }
+  100% {
+    box-shadow: 0 0 0 80px rgba(255, 255, 255, 1),
+    0 0 0 20px rgba(46, 90, 104, 0.8),
+    0 0 0 40px rgba(70, 124, 141, 0.6),
+    0 0 0 20px #89adcc,
+    0 0 0 0px #7e9fbc
+  }
 }
 
 @keyframes wave {

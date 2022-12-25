@@ -1,21 +1,26 @@
 import pushState from '../../helpers/pushState'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import logo from '../../../img/mainLogo.png'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import darkIcon from '../../../img/dark-theme.svg'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import lightIcon from '../../../img/light-theme.svg'
+import ToogleTheme from '../theme/index'
 
 class HeaderComponent {
     public header: HTMLElement | null
     public headerLogo: HTMLElement | null
-
+    private changeTheme: ToogleTheme | null
 
     constructor(selector: string) {
         this.header = document.querySelector(selector)
+        this.changeTheme = null
         this.headerLogo = null
     }
 
@@ -24,13 +29,17 @@ class HeaderComponent {
         this.header.innerHTML = this.template()
 
         this.headerLogo = document.querySelector('.header__logo')
+        this.changeTheme = new ToogleTheme('.header__theme')
 
         this.backToMainPage()
+        this.changeTheme.initial()
     }
 
     backToMainPage() {
         this.headerLogo?.addEventListener('click', () => {
-            pushState('/')
+            if (window.location.pathname !== '/') {
+                pushState('/')
+            }
         })
     }
 

@@ -1,19 +1,21 @@
-function productTemplate() {
+import {iProduct} from '../view/products/index'
+
+function productTemplate(item: iProduct) {
     return `
-     <article class="products__item product">
+     <article data-id="${item.id}" class="products__item product">
         <div class="product__img">
           <img
-              src="https://coptertime.ru/upload/iblock/86f/86f23899e18f5dd4ec994ac686d238aa.jpg"
-              alt="prod">
+              src="${item.images[0]}"
+              alt="${item.title}">
         </div>
 
         <h2 class="product__title">
-          DJI Mavic 2 Pro с пультом Smart Controller
+         ${item.title}
         </h2>
 
         <div class="product__block">
           <div class="product__price">
-            2999 Ꝑ
+            ${item.price} Ꝑ
           </div>
 
           <div class="product__btn btn btn-add">
@@ -32,8 +34,10 @@ function productTemplate() {
             <li class="rating__item"><span class="rating__star rating__star-empty"></span></li>
           </ul>
 
-          <span class="rating__count">3.5</span>
+          <span class="rating__count">${item.rating}</span>
         </div>
       </article>
   `
 }
+
+export default productTemplate

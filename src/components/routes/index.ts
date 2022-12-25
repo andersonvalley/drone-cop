@@ -17,11 +17,11 @@ class Routes {
     constructor() {
         this.page404 = new Page404()
         this.pages = new Pages()
-
         this.mainPage = new mainPage()
+        this.startRoutes()
     }
 
-    initialApp() {
+    startRoutes() {
         const pathName = window.location.pathname.slice(1)
 
         for (const key in routes) {

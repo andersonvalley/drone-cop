@@ -1,5 +1,4 @@
 import mainTemplate from '../helpers/mainTemplate'
-import getData from '../helpers/getData'
 
 class MainPage {
     public main: HTMLElement | null
@@ -11,9 +10,10 @@ class MainPage {
     renderPage() {
         if (!this.main) return
 
-        this.main.innerHTML = ''
-        getData()
         this.main.innerHTML = mainTemplate()
+
+        const productList = document.querySelector('.product__list')
+
     }
 }
 

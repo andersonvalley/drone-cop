@@ -1,8 +1,12 @@
+import {iProduct} from '../view/products/index'
+
 class CartPage {
     public main: HTMLElement | null
+    private cartItems: iProduct[]
 
     constructor() {
         this.main = document.querySelector('.main')
+        this.cartItems = []
     }
 
     template(): string {
@@ -13,6 +17,26 @@ class CartPage {
               <button class="mistake__btn btn btn-mistake">На главную</button>
             </div>
         `
+    }
+
+    addToCart(product: iProduct) {
+        this.cartItems.push(product)
+    }
+
+    removeItems(id: string) {
+        this.cartItems.filter(item => item.id !== id)
+    }
+
+    makeOrder() {
+
+    }
+
+    decrease() {
+
+    }
+
+    increase() {
+
     }
 
     renderPage() {
