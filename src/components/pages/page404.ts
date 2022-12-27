@@ -1,10 +1,13 @@
 import '../../scss/components/404.scss'
+import pushState from '../helpers/pushState'
 
 class Page404 {
     public main: HTMLElement | null
+    private backButton: HTMLElement | null
 
     constructor() {
         this.main = document.querySelector('.main')
+        this.backButton = null
     }
 
     template(): string {
@@ -19,9 +22,15 @@ class Page404 {
 
     renderPage() {
         if (!this.main) return
-
-        this.main.innerHTML = ''
         this.main.innerHTML = this.template()
+        this.backButton = document.querySelector('.btn-mistake')
+        this.backToMain()
+    }
+
+    backToMain() {
+        this.backButton?.addEventListener('click', () => {
+            pushState('/')
+        })
     }
 }
 

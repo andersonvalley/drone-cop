@@ -17,8 +17,7 @@ class FavoritePage {
 
     renderPage() {
         if (!this.main) return
-
-        this.main.innerHTML = ''
+        
         this.main.innerHTML = this.template()
     }
 }

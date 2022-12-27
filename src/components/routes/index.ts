@@ -19,6 +19,7 @@ class Routes {
         this.pages = new Pages()
         this.mainPage = new mainPage()
         this.startRoutes()
+        this.listenChangeURL()
     }
 
     startRoutes() {
@@ -31,7 +32,14 @@ class Routes {
             }
         }
 
+        // render 404 if no routes
         this.page404.renderPage()
+    }
+
+    listenChangeURL() {
+        window.addEventListener('popstate', () => {
+            this.pages.render(window.location.pathname.slice(1))
+        })
     }
 }
 

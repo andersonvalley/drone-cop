@@ -2,7 +2,8 @@ import {iProduct} from '../view/products/index'
 
 class CartPage {
     public main: HTMLElement | null
-    private cartItems: iProduct[]
+    public cartItems: iProduct[]
+
 
     constructor() {
         this.main = document.querySelector('.main')
@@ -11,8 +12,8 @@ class CartPage {
 
     template(): string {
         return `
-            <div class="mistake">
-              <h1 class="mistake__title">cart</h1>
+            <div class="cart">
+              <h1 class="cart__title">cart</h1>
               <img class="mistake__img" src="https://blog.mozilla.org/wp-content/blogs.dir/278/files/2018/05/No_More_404s.gif" alt="mistake">
               <button class="mistake__btn btn btn-mistake">На главную</button>
             </div>
@@ -42,8 +43,16 @@ class CartPage {
     renderPage() {
         if (!this.main) return
 
-        this.main.innerHTML = ''
-        this.main.innerHTML = this.template()
+        if (this.cartItems) {
+            this.main.innerHTML = `
+                <div class="cart">
+                  <h2 class="cart__title">Корзина пуста</h2>
+                  <button class="btn">За покупками</button>
+                </div>
+            `
+        } else {
+            this.main.innerHTML = this.template()
+        }
     }
 }
 

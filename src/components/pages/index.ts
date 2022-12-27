@@ -1,12 +1,11 @@
 import FavoritePage from './favoritePage'
 import CartPage from './cartPage'
 import MainPage from './mainPage'
-import getData, {getProduct} from '../helpers/getData'
+import {getProduct} from '../helpers/getData'
 import ProductPage from './productPage'
 
 class Pages {
     public pages: { favorites: FavoritePage; cart: CartPage }
-    public main: HTMLElement | null
     public mainPage: MainPage
     private productPage: ProductPage
 
@@ -18,28 +17,26 @@ class Pages {
 
         this.mainPage = new MainPage()
         this.productPage = new ProductPage()
-
-        this.main = document.querySelector('.main')
     }
 
     render(key: string) {
-        this.cleanMainDOM()
 
+        // render main page
         if (key === '') {
             this.mainPage.renderPage()
-            getData()
             return
         }
 
-        if (typeof +key === 'number') {
-            if (isNaN(+key)) return
+        // render product page and fetch product by id
+        if (typeof +key === 'number' && !isNaN(+key)) {
             this.productPage.renderPage()
             if (+key) {
-                getProduct(+key)
+                getProduct(+key).then()
             }
             return
         }
 
+        // render other pages
         for (const keys in this.pages) {
             if (keys === key) {
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -47,11 +44,6 @@ class Pages {
                 this.pages[keys].renderPage()
             }
         }
-    }
-
-    cleanMainDOM() {
-        if (!this.main) return
-        this.main.innerHTML = ''
     }
 }
 

@@ -33,6 +33,7 @@ class HeaderComponent {
 
         this.backToMainPage()
         this.changeTheme.initial()
+
     }
 
     backToMainPage() {
@@ -67,7 +68,7 @@ class HeaderComponent {
                 </svg>
               </button>
               <button class="btn header__ui-button header__cart cart">
-                <span class="cart__quantity quantity">1</span>
+                <span class="cart__quantity quantity">10</span>
                 <svg class="cart__logo" fill="#7e9fbc" viewBox="0 0 121 126"
                      xmlns="http://www.w3.org/2000/svg">
                   <path
