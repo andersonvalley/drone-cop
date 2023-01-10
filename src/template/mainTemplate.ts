@@ -1,5 +1,5 @@
 // @ts-ignore
-import arrow from '../../img/arrow.svg'
+import arrow from '../img/arrow.svg'
 
 export default function mainTemplate() {
     return `
@@ -140,7 +140,7 @@ export default function mainTemplate() {
             </div>
 
             <div class="products__found">
-              Найдено товаров: <span class="products__number">21</span>
+              Найдено товаров: <span class="products__number"></span>
             </div>
           </div>
 
@@ -159,7 +159,9 @@ export default function mainTemplate() {
           </ul>
         </div>
 
-        <span class="loader"></span>
+        <div class="overlay">
+          <span class="loader"></span>
+        </div>
         <div class="products__list"></div>
 
         <div class="products__pagination pagination">

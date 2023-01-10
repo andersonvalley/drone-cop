@@ -1,6 +1,5 @@
 import Page404 from '../pages/page404'
 import Pages from '../pages/index'
-import mainPage from '../pages/mainPage'
 
 
 enum routes {
@@ -12,17 +11,14 @@ enum routes {
 class Routes {
     private page404: Page404
     private pages: Pages
-    private mainPage: mainPage
 
     constructor() {
         this.page404 = new Page404()
         this.pages = new Pages()
-        this.mainPage = new mainPage()
-        this.startRoutes()
-        this.listenChangeURL()
     }
 
-    startRoutes() {
+    initRoutes() {
+        this.listenChangeURL()
         const pathName = window.location.pathname.slice(1)
 
         for (const key in routes) {

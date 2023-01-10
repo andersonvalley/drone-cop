@@ -2,15 +2,15 @@ import pushState from '../../helpers/pushState'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import logo from '../../../img/mainLogo.png'
+import logo from '../../img/mainLogo.png'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import darkIcon from '../../../img/dark-theme.svg'
+import darkIcon from '../../img/dark-theme.svg'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import lightIcon from '../../../img/light-theme.svg'
+import lightIcon from '../../img/light-theme.svg'
 import ToogleTheme from '../theme/index'
 
 class HeaderComponent {

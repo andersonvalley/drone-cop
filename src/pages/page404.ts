@@ -1,4 +1,4 @@
-import '../../scss/components/404.scss'
+import '../scss/components/404.scss'
 import pushState from '../helpers/pushState'
 
 class Page404 {

@@ -1,8 +1,6 @@
 import Routes from '../routes/index'
-import FooterComponent from '../view/footer/index'
-import HeaderComponent from '../view/header/index'
-import Favorites from '../view/favorites/index'
-import Cart from '../view/cart/index'
+import FooterComponent from '../components/footer/index'
+import HeaderComponent from '../components/header/index'
 import {getProduct} from '../helpers/getData'
 import ProductPage from '../pages/productPage'
 
@@ -10,22 +8,15 @@ class App {
     private footer: FooterComponent
     private header: HeaderComponent
     private routes: Routes | null
-    private favorites: Favorites | null
-    private cart: Cart | null
-    private productPage: ProductPage
+    private productPageById: ProductPage | null
 
 
     constructor() {
         this.footer = new FooterComponent('.footer')
         this.header = new HeaderComponent('.header')
-        this.routes = null
+        this.routes = new Routes()
 
-        this.favorites = null
-        this.cart = null
-
-        this.productPage = new ProductPage()
-
-    // this.products = new Products()
+        this.productPageById = null
     }
 
     initialApp() {
@@ -33,17 +24,14 @@ class App {
         this.footer.renderFooter()
         this.header.renderHeader()
 
-        // render routes of app
-        this.routes = new Routes()
-        this.favorites = new Favorites()
-        this.cart = new Cart()
+        this.routes?.initRoutes()
 
         // render product by id in URL
         const id = +window.location.pathname.slice(1)
 
         if (id) {
+            this.productPageById = new ProductPage()
             getProduct(id).then()
-            return
         }
     }
 }

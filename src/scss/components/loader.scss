@@ -5,10 +5,27 @@
   border-radius: 50%;
   background: #fff;
   animation: wave 1s ease-in infinite;
-  display: none;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+
+.theme-light .overlay {
+  background-color: rgba(14, 14, 14, 0.93);
+}
+
+.theme-dark .overlay {
+  background-color: rgba(14, 14, 14, 0.96);
 }
 
 .theme-light .loader {
@@ -18,10 +35,10 @@
   border-radius: 50%;
   background: #255472;
   animation: waveLight 1s ease-in infinite;
-  display: none;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  display: block;
 }
 
 @keyframes waveLight {

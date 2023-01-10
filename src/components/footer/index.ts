@@ -1,5 +1,5 @@
 // @ts-ignore
-import logoFooter from '../../../img/logo.svg'
+import logoFooter from '../../img/logo.svg'
 
 class FooterComponent {
     public footer: HTMLElement | null

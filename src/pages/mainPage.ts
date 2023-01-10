@@ -1,5 +1,5 @@
 import mainTemplate from '../template/mainTemplate'
-import Products from '../view/products/index'
+import Products from '../components/products/index'
 
 class MainPage {
     public main: HTMLElement | null
@@ -14,7 +14,7 @@ class MainPage {
         if (!this.main) return
         this.main.innerHTML = mainTemplate()
         this.products = new Products()
-    // this.products.update()
+        this.products.fetchProducts()
     }
 }
 

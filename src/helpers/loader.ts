@@ -1,5 +1,5 @@
 export default function loading(flag: boolean): void {
-    const loader = document.querySelector('.loader') as HTMLElement | null
+    const loader = document.querySelector('.overlay') as HTMLElement | null
 
     if (!loader) return
 

@@ -1,4 +1,4 @@
-import {iProduct} from '../view/products/index'
+import iProduct from '../types/index'
 
 class ProductPage {
     public main: Element | null
@@ -14,7 +14,6 @@ class ProductPage {
         this.renderPage()
     }
 
-
     template(): string {
         return `
           <div class="product">
@@ -27,7 +26,7 @@ class ProductPage {
 
     renderPage() {
         if (!this.main) return
-        
+
         this.main.innerHTML = this.template()
 
     }

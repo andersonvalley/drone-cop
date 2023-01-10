@@ -1,4 +1,4 @@
-import {iProduct} from '../view/products/index'
+import iProduct from '../types/index'
 
 function productTemplate(item: iProduct) {
     return `

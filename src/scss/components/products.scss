@@ -185,10 +185,10 @@
     display: flex;
   }
 
-
   &__item-current.pagination__item {
     background-color: var(--accent-color);
     color: #fff;
+    pointer-events: none;
   }
 
   &__item:not(:last-child) {

@@ -1,5 +1,5 @@
 import loading from './loader'
-// import Products from '../view/products/index'
+// import Products from '../components/products/index'
 import ProductPage from '../pages/productPage'
 
 export default async function getData(page = 1, limit = 8) {
@@ -9,16 +9,8 @@ export default async function getData(page = 1, limit = 8) {
 
     try {
         const response = await fetch(url)
-        // const products = new Products()
-
-        if (!response.ok) {
-            // products.getError('Ошибка загрузки, попробуйте перезагрузить страницу')
-        }
 
         data = await response.json()
-
-        // products.getProducts(data[0].items)
-        // products.getTotalProducts(data[0].count)
 
     } catch (e) {
         console.log(e)

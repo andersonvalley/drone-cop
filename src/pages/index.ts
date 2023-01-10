@@ -30,6 +30,7 @@ class Pages {
         // render product page and fetch product by id
         if (typeof +key === 'number' && !isNaN(+key)) {
             this.productPage.renderPage()
+            console.log('yes')
             if (+key) {
                 getProduct(+key).then()
             }
